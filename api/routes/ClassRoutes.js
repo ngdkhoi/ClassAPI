@@ -13,7 +13,7 @@ router.post('/', async (req, res, next) => {
     const data = {
         ClassID: req.body.ClassID,
         ClassName: req.body.ClassName,
-        NumberStudent: req.body.NumberStudent,
+        NumberStudent: 0,
         StudentAmount: req.body.StudentAmount,
         Teacher: req.body.Teacher
     }
@@ -22,7 +22,9 @@ router.post('/', async (req, res, next) => {
         if (err) console.log(err);
     })
 
-    res.send('ok')
+    res.json({
+        status: 'successed'
+    })
 })
 
 export default router;
